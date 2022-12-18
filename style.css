@@ -92,6 +92,8 @@ nav ul li {
     cursor: pointer;
 }
 .songItem:hover{
+    overflow: hidden;
+    z-index: 200;
     padding: 8px;
 }
 .songName{
@@ -135,7 +137,7 @@ nav ul li {
 }
 .songlistplay i {
     cursor: pointer;
-}
+} 
 .songInfo {
     position: absolute;
     font-size: large;
@@ -152,7 +154,6 @@ nav ul li {
 .songList {
    /* display: inline; */
     padding:4px;
-    /* width: 300px; */
     height: 500px;
     overflow: auto;
     text-align:justify;
@@ -161,18 +162,17 @@ nav ul li {
     display: none;
 }
 .right{
+    overflow: hidden;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5rem;
 }
 #mainimg{
-    height: 400px;
-    padding-left: 100px;
-}
-.coninfo{
-    display: inline;
-}
-.conimg{
-    display: inline;
+    max-height: 28rem;
+    max-width: 30rem;
+    padding-left: 6rem;
 }
 #songNameinright{
   font-weight: 100px;
@@ -182,4 +182,11 @@ nav ul li {
 #singernameinright{
     display: block;
     padding-left: 20px;
+}
+
+
+@media only screen and (max-width: 700px){
+    .right{
+        display: none;
+    }
 }

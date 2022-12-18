@@ -19,7 +19,7 @@ function second(){
 }
 
 let songs = [
-    {songName: "Fassle", filePath: "songs/1.mp3", coverPath: "covers/1.jpg"},
+    {songName: "Fassle - Aditya Jain", filePath: "songs/1.mp3", coverPath: "covers/1.jpg"},
     {songName: "Cielo - Huma-Huma", filePath: "songs/2.mp3", coverPath: "covers/2.jpg"},
     {songName: "DEAF KEV - Invincible ", filePath: "songs/3.mp3", coverPath: "covers/3.jpg"},
     {songName: "Different Heaven & EH!DE", filePath: "songs/4.mp3", coverPath: "covers/4.jpg"},
@@ -78,6 +78,8 @@ const makeAllPlays = ()=>{
     Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
         element.classList.remove('fa-pause-circle');
         element.classList.add('fa-play-circle');
+        second();
+        gif.style.opacity = 1;
     })
 }
 
@@ -88,7 +90,7 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
         e.target.classList.remove('fa-play-circle');
         e.target.classList.add('fa-pause-circle');
         audioElement.src = `songs/${songIndex+1}.mp3`;
-        changeinimg(songIndex+1)
+        changeinimg(songIndex)
         masterSongName.innerText = songs[songIndex].songName;
         audioElement.currentTime = 0;
         audioElement.play();
@@ -106,7 +108,7 @@ document.getElementById('next').addEventListener('click', ()=>{
         songIndex += 1;
     }
     audioElement.src = `songs/${songIndex+1}.mp3`;
-    changeinimg(songIndex+1)
+    changeinimg(songIndex)
     second()
     masterSongName.innerText = songs[songIndex].songName;
     audioElement.currentTime = 0;
@@ -124,7 +126,7 @@ document.getElementById('previous').addEventListener('click', ()=>{
         songIndex -= 1;
     }
     audioElement.src = `songs/${songIndex+1}.mp3`;
-    changeinimg(songIndex+1)
+    changeinimg(songIndex)
     second()
     masterSongName.innerText = songs[songIndex].songName;
     audioElement.currentTime = 0;
